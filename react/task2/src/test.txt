@@ -1,0 +1,160 @@
+// import React, { useState } from "react";
+
+// const employeeData = {
+
+//   content: "cpb\nCPB SOFTWARE (GERMANY) GMBH Im Bruch 3...",
+
+//   pages: [
+
+//     {
+
+//       page_number: 1,
+
+//       width: 8.2639,
+
+//       height: 11.6806,
+
+//       words: [
+
+//         {
+
+//           content: "cpb",
+
+//           polygon: [5.0192, 0.3802, 6.4235, 0.3802, 6.4235, 1.0417, 5.0192, 1.0444],
+
+//           confidence: 0.962,
+
+//           spans: null
+
+//         }
+
+//       ],
+
+//       lines: [
+
+//         {
+
+//           content: "cpb",
+
+//           polygon: [5.0192, 0.3853, 6.388, 0.3802, 6.4185, 1.0444, 5.0344, 1.0444],
+
+//           confidence: null,
+
+//           spans: [
+
+//             {
+
+//               offset: 0,
+
+//               length: 3
+
+//             }
+
+//           ]
+
+//         }
+
+//       ],
+
+//       selection_marks: null
+
+//     }
+
+//   ],
+
+//   tables: [],
+
+//   figures: [],
+
+//   fields: null
+
+// };
+
+// const DisplayJSON = ({ data, label }) => {
+
+//   const [expanded, setExpanded] = useState(true);
+
+//   const isObject = data !== null && typeof data === "object" && !Array.isArray(data);
+
+//   const isArray = Array.isArray(data);
+
+//   const isPrimitive = !isObject && !isArray;
+
+//   const toggle = () => setExpanded(!expanded);
+
+//   if (isArray) {
+
+//     return (
+//       <div style={{ marginLeft: "1em", borderLeft: "2px solid #ccc", paddingLeft: "1em" }}>
+//         <div style={{ fontWeight: "bold", cursor: "pointer" }} onClick={toggle}>
+//           <span>{expanded ? "▼" : "▶"} </span>
+
+//           {label || "Array"} [{data.length}]
+//         </div>
+
+//         {expanded && (
+//           <ul style={{ paddingLeft: "1em", listStyle: "none" }}>
+
+//             {data.map((item, index) => (
+//               <li key={index}>
+//                 <DisplayJSON data={item} label={`Item ${index}`} />
+//               </li>
+
+//             ))}
+//           </ul>
+
+//         )}
+//       </div>
+
+//     );
+
+//   }
+
+//   if (isObject) {
+
+//     return (
+//       <div style={{ marginLeft: "1em", borderLeft: "2px solid #ccc", paddingLeft: "1em" }}>
+//         <div style={{ fontWeight: "bold", cursor: "pointer" }} onClick={toggle}>
+//           <span>{expanded ? "▼" : "▶"} </span>
+
+//           {label || "Object"}
+//         </div>
+
+//         {expanded && (
+//           <div style={{ paddingLeft: "1em" }}>
+
+//             {Object.entries(data).map(([key, value]) => (
+//               <div key={key}>
+//                 <strong>{key}:</strong>{" "}
+//                 <DisplayJSON data={value} label={key} />
+//               </div>
+
+//             ))}
+//           </div>
+
+//         )}
+//       </div>
+
+//     );
+
+//   }
+
+//   return <span>{String(data)}</span>;
+
+// };
+
+// function App() {
+
+//   return (
+//     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+//       <h2>Employee JSON Viewer</h2>
+//       <DisplayJSON data={employeeData} label="Employee Data" />
+//     </div>
+
+//   );
+
+// }
+
+// export default App;
+
+
